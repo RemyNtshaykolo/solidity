@@ -1,10 +1,15 @@
 // SPDX-License-Identifier: MIT
-import @chainlink/contracts/src/v0.6/interfaces/aggregatorv3/interface.sol;
-
+import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 pragma solidity 0.8.7;
 
 contract FundMe{
 
+    AggregatorV3Interface priceFeed = AggregatorV3Interface("") 
+    function convertWeiEther(uint256 amount) public view returns (uint256) {
+
+        (,int256 data,,) = latestRoundData();
+        return data;
+    }
 
     mapping(address =>uint256) public transactions;
 
